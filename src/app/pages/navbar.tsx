@@ -30,7 +30,11 @@ export default function NavBar() {
                 <Sparkles className="w-3 h-3 text-[#f78f3f]"/>
                 <span className="text-[12px] text-[#FFFFFF] select-none">Fan Experience</span>
             </div>
-            
+            <div>
+                {/* <button className="flex items-center justify-center border border-[#f78f3f] rounded-2xl px-2 cursor-pointer gap-1">
+                    <span className="text-[12px] text-[#FFFFFF] select-none">Login</span>
+                </button> */}
+            </div>
         </div>
     </div>
   );
