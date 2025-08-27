@@ -208,18 +208,15 @@ export default function HeroSelect() {
             </div>
           </div>
         </section>
-        <div className="w-full h-screen flex flex-col md:flex-row">
+        <div className="w-full h-screen border border-white flex flex-col md:flex-row">
           {/* Left Panel */}
-          <div className=" 
-              /* Global */ p-5 w-full h-screen flex flex-wrap overflow-y-auto items-center justify-center gap-5 
-              "
-          >
+          <div className="/* Global */ p-5 w-full h-screen flex flex-wrap overflow-y-auto  gap-3 border-white border ">
           {Characters.map((character, idx) => {
             const { name, realName, src, team, description, tags, expertise, colors } = character;
 
             return (
-            <div key={idx} className="group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
-              <div className="text-white rounded-3xl border shadow-2xl duration-700 z-10 relative backdrop-blur-xl overflow-hidden w-[225px]"
+            <div key={idx} className=" cursor-pointer transform transition-all duration-500 hover:scale-100 hover:-rotate-1">
+              <div className="text-white rounded-2xl border shadow-2xl duration-700 z-10  backdrop-blur-xl overflow-hidden w-[250px] h-[350px] flex flex-col items-center justify-center relative"
                 style={{
                   backgroundImage: `linear-gradient(to top right, ${colors.bgGradientFrom}, ${colors.bgGradientTo})`,
                   borderColor: `${colors.primary}33`,
@@ -229,12 +226,12 @@ export default function HeroSelect() {
                       <div
                         className="absolute inset-0 transition-opacity duration-500"
                         style={{
-                          backgroundImage: `linear-gradient(to top right, ${colors.primary}0D, ${colors.primary}1A)`, // 5%-10%
+                          backgroundImage: `linear-gradient(to top right, ${colors.primary}0D, ${colors.primary}1A)`,
                           opacity: 0.4,
                         }}
                       />
                       <div
-                        className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full blur-3xl transform transition-all duration-700 animate-bounce delay-500"
+                        className="absolute -bottom-20 -left-20 w-36 h-36 rounded-full blur-3xl transform transition-all duration-700 animate-bounce delay-500"
                         style={{ backgroundImage: `linear-gradient(to top right, ${colors.primary}1A, transparent)` }}
                       />
                   <div className="absolute top-10 left-10 w-16 h-16 rounded-full blur-xl animate-ping"
@@ -247,9 +244,9 @@ export default function HeroSelect() {
                     style={{ backgroundImage: `linear-gradient(to top right, ${colors.primary}1A, transparent)` }}></div>
                 </div>
 
-                <div className="p-8 relative z-10">
+                <div className="p-3 relative z-10">
                   <div className="flex flex-col items-center text-center">
-                    <div className="relative mb-6">
+                    <div className="relative mb-1">
                       <div className="absolute inset-0 rounded-full border-2 border-green-500/20 animate-ping"></div>
                       <div className="absolute inset-0 rounded-full border border-green-500/10 animate-pulse delay-500"></div>
                       <div style={{ backgroundImage: `url(${src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="p-6 rounded-full backdrop-blur-lg border border-green-500/20 bg-gradient-to-br from-black/80 to-gray-900/60 shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 hover:shadow-green-500/20">
@@ -258,9 +255,9 @@ export default function HeroSelect() {
                       </div>
                     </div>
 
-                    <div className="mb-4 transform group-hover:scale-105 transition-transform duration-300">
+                    <div className="mb-2 transform group-hover:scale-105 transition-transform duration-300">
                       <p
-                        className="text-3xl font-bold bg-clip-text text-transparent animate-pulse"
+                        className="text-xl font-bold bg-clip-text text-transparent animate-pulse"
                         style={{
                           backgroundImage: `linear-gradient(to right, ${colors.textGradient.join(', ')})`,
                         }}
@@ -269,20 +266,20 @@ export default function HeroSelect() {
                       </p>
                     </div>
 
-                    <div className="space-y-1 max-w-sm">
+                    <div className="">
                       <p className="text-white font-semibold text-base transform group-hover:scale-185 transition-transform duration-300">
                         {realName}
                       </p>
-                      <p className=" border h-10 flex items-center justify-center rounded-xl p-1 text-gray-300 text-sm leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
+                      <p className=" border flex items-center justify-center rounded-xl p-1 text-gray-300 text-sm leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
                         {team}
                       </p>
                       <p className="mt-5 text-gray-300 text-sm leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
                         {description}
                       </p>
                       <div>
-                        <div className="mt-5 items-center flex flex-wrap justify-center gap-2" >
+                        <div className="mt-1 items-center flex flex-wrap  justify-center gap-2" >
                         {expertise.map((expertise) => (
-                          <p key={expertise} className="border w-30 text-ellipsis overflow-hidden whitespace-nowrap rounded-xl p-1 text-gray-300 text-sm leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
+                          <p key={expertise} className="text-[10px] border w-20 text-ellipsis overflow-hidden whitespace-nowrap rounded-xl p-1 text-gray-300 leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
                             {expertise}
                           </p>
                         ))}
